@@ -1,5 +1,22 @@
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        output = []
+
+        dict = {}
+        for i in range(len(strs)):
+            str = ''.join(sorted(strs[i]))
+            print(str)
+            if str in dict:
+                dict[str].append(strs[i])
+            else:
+                dict[str] = [strs[i]]
+        
+        for v in dict.values():
+            output.append(v)
+        return output
+
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         dict = {}
         dict2 = {}
         count = []
@@ -30,4 +47,4 @@ class Solution:
             v = v.split(' ')
             output.append(v[0:(len(v) - 1)])
 
-        return output   
+        return output
