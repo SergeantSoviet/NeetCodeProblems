@@ -12,3 +12,21 @@ class Solution:
                 return False
 
         return True
+
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        list = []
+        for c in s:
+            if c.isalnum() == True:
+                list.append(c.lower())
+        s = "".join(list)
+
+        left = 0
+        right = len(s) - 1
+        while left < right:
+            if s[left] == s[right]:
+                left +=1
+                right -=1
+            else:
+                return False
+        return True
